@@ -22,8 +22,9 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.use((req, res, next, error) => {
-	res.send(error.message)
+app.use((error, req, res, next) => {
+	res.status(500);
+	res.send(error.message);
 })
 
 // sets our server port for development
