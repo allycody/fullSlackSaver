@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const keys = require('../keys.js')
+// const keys = require('../keys.js')
 const request = require('request');
 
-const clientId = keys.slackApp_clientId
-const clientSecret = keys.slackApp_clientSecret
+// const clientId = keys.slackApp_clientId
+// const clientSecret = keys.slackApp_clientSecret
 
 const validator = require('email-validator');
 const transporter = require('../nodemailer')
@@ -26,7 +26,7 @@ router.get('/oauth', function(req, res, next){
         // We'll do a GET call to Slack's `oauth.access` endpoint, passing our app's client ID, client secret, and the code we just got as query parameters.
         request({
             url: 'https://slack.com/api/oauth.access', //URL to hit
-            qs: {code: req.query.code, client_id: clientId, client_secret: clientSecret}, //Query string data
+            qs: {code: req.query.code, client_id: process.clientId, client_secret: process.clientSecret}, //Query string data
             method: 'GET', //Specify the method
 
         }, function (error, response, body) {
@@ -89,7 +89,7 @@ router.post('/pin', function(req, res, next){
 	let message = req.body.event.item.message
 	request({
             url: 'https://slack.com/api/users.info', //URL to hit
-            qs: {code: req.query.code, client_id: clientId, client_secret: clientSecret, user:req.body.event.user, token:keys.otherToken}, //Query string data
+            qs: {code: req.query.code, client_id: process.clientId, client_secret: process.clientSecret, user:req.body.event.user, token:keys.otherToken}, //Query string data
             method: 'GET', //Specify the method
 
         }, function (error, response, body) {
