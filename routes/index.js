@@ -115,7 +115,7 @@ router.post('/pin', function(req, res, next){
 				console.log('Message sent: ' + info.response);
 				res.send(`Your message was sent to ${email}`)
 		});
-                res.json(body);
+                res.json(body.challenge);
 
 
 
