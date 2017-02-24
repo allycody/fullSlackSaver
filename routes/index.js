@@ -13,8 +13,8 @@ router.post('/email', function(req, res, next){
 		let error = new Error('Invalid syntax Usage: `/email <email> <message>')
 		next(error)
 	}
-	let email = req.body.text.slice(0, index);
-	let text = req.body.text.slice(index);
+	let email = req.body.text.slice(0, messageSeparatorIndex);
+	let text = req.body.text.slice(messageSeparatorIndex);
 	if (validator.validate(email)) {
 		// setup e-mail data with unicode symbols
 		var mailOptions = {
