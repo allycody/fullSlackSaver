@@ -83,7 +83,7 @@ router.post('/email', function(req, res, next){
 
 
 router.post('/pin', function(req, res, next){
-	res.send('yes');
+	res.send(req.body.challenge);
 	next();
 	console.log('req.body PIN', req.body)
 	console.log("user: ", req.body.event.user)
