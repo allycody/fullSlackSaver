@@ -22,6 +22,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+app.use((req, res, next, error) => {
+	res.send(error.message)
+})
+
 // sets our server port for development
 const PORT = process.env.PORT || 3000
 
