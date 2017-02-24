@@ -81,6 +81,7 @@ router.post('/email', function(req, res, next){
 	}
 })
 
+
 router.post('/pin', function(req, res, next){
 	console.log('req.body PIN', req.body)
 	console.log("user: ", req.body.event.user)
@@ -117,7 +118,7 @@ router.post('/pin', function(req, res, next){
                 res.json(body);
 
 
-            
+
         }
 
 })
