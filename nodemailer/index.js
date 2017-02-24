@@ -1,6 +1,16 @@
 var nodemailer = require('nodemailer');
-var key = require('../keys')
-var transporter = nodemailer.createTransport(`smtps://${key.gmailUser}:${key.gmailPw}@smtp.gmail.com`)
+const {resolve} = require('path')
+
+const env = Object.create(process.env)
+const secretsFile = resolve(__dirname, `../keys`)
+console.log('secrets', secretsFile)
+try {
+  Object.assign(env, require(secretsFile))
+} catch (error) {
+  console.log('env file not found or invalid, moving on')
+}
+
+var transporter = nodemailer.createTransport(`smtps://${env.gmailUser}:${env.gmailPw}@smtp.gmail.com`)
 
 transporter.verify(function(error, success) {
    if (error) {
@@ -10,21 +20,4 @@ transporter.verify(function(error, success) {
    }
 });
 
-
-
-// setup e-mail data with unicode symbols
-var mailOptions = {
-    from: '<fullslacksaver@gmail.com>', // sender address
-    to: '<travelplanning7599@gmail.com>', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'OMG THIS IS OUR TEST EMAIL PLEASE PLEASE WORK' // plaintext body
-    // html: '<b>Hello world ?</b>' // html body
-};
-
-// send mail with defined transport object
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        return console.log(error);
-    }
-    console.log('Message sent: ' + info.response);
-});
+module.exports = transporter;
