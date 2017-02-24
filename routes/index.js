@@ -104,7 +104,7 @@ router.post('/pin', function(req, res, next){
 						from: '<fullslacksaver@gmail.com>', // sender address
 						to: email, // list of receivers
 						subject: `Slack message from ${req.body.team_domain} ✔`, // Subject line
-						html: `<b>Saved from team ${req.body.team_domain} / ${req.body.channel_name}</b><br />${message}` // html body
+						html: `<b>Saved from team ${req.body.team_domain} / ${req.body.channel_name}</b><br />${message.text}` // html body
 				};
 
 		// send mail with defined transport object
