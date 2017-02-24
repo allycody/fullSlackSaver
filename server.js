@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use('/', require('./routes'))
 
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error(':question: Not Found');
   err.status = 404;
   next(err);
 });

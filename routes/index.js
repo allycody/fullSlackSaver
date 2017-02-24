@@ -10,7 +10,7 @@ router.get('/', function(req, res, next){
 router.post('/email', function(req, res, next){
 	let messageSeparatorIndex = req.body.text.indexOf(' ');
 	if (messageSeparatorIndex === -1) {
-		let error = new Error('Invalid syntax Usage: `/email <email> <message>')
+		let error = new Error(':-1: Invalid syntax Usage: `/email <email> <message>')
 		next(error)
 	}
 	let email = req.body.text.slice(0, messageSeparatorIndex);
@@ -30,10 +30,10 @@ router.post('/email', function(req, res, next){
 						next(new Error(`Sending Failed: ${error.message}`))
 				}
 				console.log('Message sent: ' + info.response);
-				res.send(`Your message was sent to ${email}`)
+				res.send(`Your :email: was sent to ${email} :100:`)
 		});
 	} else {
-		res.send('invalid email address\nUsage: `/email <email> <message>`')
+		res.send(':no_entry: invalid email address\nUsage: `/email <email> <message>`')
 	}
 })
 
