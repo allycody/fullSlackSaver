@@ -8,6 +8,7 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/email', function(req, res, next){
+	console.log('~~~~~in EMAIL ROUTE~~~~~~')
 	console.log(req.body)
 	let index = req.body.text.indexOf(' ');
 	let email = req.body.text.slice(0, index);
