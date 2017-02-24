@@ -1,5 +1,4 @@
 var nodemailer = require('nodemailer');
-var key = require('../keys')
 const {resolve} = require('path')
 
 const env = Object.create(process.env)
