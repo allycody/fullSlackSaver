@@ -8,6 +8,7 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/email', function(req, res, next){
+	console.log(req.body)
 	let index = req.body.text.indexOf(' ');
 	let email = req.body.text.slice(0, index);
 	let text = req.body.text.slice(index);
@@ -16,8 +17,8 @@ router.post('/email', function(req, res, next){
 		var mailOptions = {
 				from: '<fullslacksaver@gmail.com>', // sender address
 				to: email, // list of receivers
-				subject: 'Hello ✔', // Subject line
-				text: text // plaintext body
+				subject: `Slack message from ${req.body.team_domain} ✔`, // Subject line
+				html: `<b>Saved from team ${req.body.team_domain} / ${req.body.channel_name}</b><br />${text}` // plaintext body
 				// html: '<b>Hello world ?</b>' // html body
 		};
 
