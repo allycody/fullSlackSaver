@@ -22,7 +22,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.listen(3000, function(){
+// sets our server port for development
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, function(){
 		console.log("app is listening on port 3000...")
 	});
 //const server = https.createServer(options, app)
