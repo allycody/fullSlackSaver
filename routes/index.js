@@ -9,8 +9,7 @@ router.get('/', function(req, res, next){
 
 router.post('/email', function(req, res, next){
 	let messageSeparatorIndex = req.body.text.indexOf(' ');
-	let messageSeparatorIndex = req.body.text.indexOf(' ');
-	if (index === -1) {
+	if (messageSeparatorIndex === -1) {
 		let error = new Error('Invalid syntax Usage: `/email <email> <message>')
 		next(error)
 	}
