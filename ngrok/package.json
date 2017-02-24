@@ -1,0 +1,125 @@
+{
+  "_args": [
+    [
+      "ngrok@~2.2.2",
+      "/Users/Ally/Documents/GHA/learndot-engineering/newlearn"
+    ]
+  ],
+  "_from": "ngrok@>=2.2.2 <2.3.0",
+  "_id": "ngrok@2.2.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/ngrok",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/ngrok-2.2.4.tgz_1480031199963_0.8047740797046572"
+  },
+  "_npmUser": {
+    "email": "a.bubenshchykov@gmail.com",
+    "name": "bubenshchykov"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {
+    "abbrev": "1.0.9",
+    "asynckit": "0.4.0",
+    "aws4": "1.5.0",
+    "binary": "0.3.0",
+    "core-util-is": "1.0.2",
+    "extend": "3.0.0",
+    "har-validator": "2.0.6",
+    "inherits": "2.0.3",
+    "is-typedarray": "1.0.0",
+    "isarray": "0.0.1",
+    "isstream": "0.1.2",
+    "json-stringify-safe": "5.0.1",
+    "jsprim": "1.3.1",
+    "mime-types": "2.1.14",
+    "mkpath": "0.1.0",
+    "nopt": "3.0.6",
+    "sshpk": "1.10.2",
+    "string_decoder": "0.10.31",
+    "stringstream": "0.0.5",
+    "tough-cookie": "2.3.2",
+    "tunnel-agent": "0.4.3"
+  },
+  "_requested": {
+    "name": "ngrok",
+    "raw": "ngrok@~2.2.2",
+    "rawSpec": "~2.2.2",
+    "scope": null,
+    "spec": ">=2.2.2 <2.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ngrok/-/ngrok-2.2.4.tgz",
+  "_shasum": "6474d947b2483bf2207fe05466407a4657cbf236",
+  "_shrinkwrap": null,
+  "_spec": "ngrok@~2.2.2",
+  "_where": "/Users/Ally/Documents/GHA/learndot-engineering/newlearn",
+  "author": {
+    "name": "bubenshchykov"
+  },
+  "bin": {
+    "ngrok": "./bin/ngrok"
+  },
+  "bugs": {
+    "url": "https://github.com/bubenshchykov/ngrok/issues"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "decompress-zip": "^0.3.0",
+    "lock": "^0.1.2",
+    "request": "^2.55.0",
+    "uuid": "^3.0.0",
+    "xtend": "^4.0.1"
+  },
+  "description": "node wrapper for ngrok",
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "homedir": "^0.6.0",
+    "mocha": "~1.14.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "6474d947b2483bf2207fe05466407a4657cbf236",
+    "tarball": "https://registry.npmjs.org/ngrok/-/ngrok-2.2.4.tgz"
+  },
+  "files": [
+    "index.js",
+    "postinstall.js",
+    "bin/ngrok"
+  ],
+  "gitHead": "644794f0f3357932e5f05f37d7d77245cda7cf8d",
+  "homepage": "https://github.com/bubenshchykov/ngrok#readme",
+  "keywords": [
+    "ngrok",
+    "localhost",
+    "tunneling",
+    "localtunnel",
+    "webhook"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "a.bubenshchykov@gmail.com",
+      "name": "bubenshchykov"
+    }
+  ],
+  "name": "ngrok",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bubenshchykov/ngrok.git"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js",
+    "postupdate": "node ./postinstall.js",
+    "test": "node ./node_modules/mocha/bin/_mocha"
+  },
+  "version": "2.2.4"
+}
