@@ -1,6 +1,17 @@
 var nodemailer = require('nodemailer');
 var key = require('../keys')
-var transporter = nodemailer.createTransport(`smtps://${key.gmailUser}:${key.gmailPw}@smtp.gmail.com`)
+const {resolve} = require('path')
+
+const env = Object.create(process.env)
+const secretsFile = resolve(__dirname, `../keys`)
+console.log('secrets', secretsFile)
+try {
+  Object.assign(env, require(secretsFile))
+} catch (error) {
+  console.log('env file not found or invalid, moving on')
+}
+
+var transporter = nodemailer.createTransport(`smtps://${env.gmailUser}:${env.gmailPw}@smtp.gmail.com`)
 
 transporter.verify(function(error, success) {
    if (error) {
