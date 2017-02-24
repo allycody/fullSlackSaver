@@ -11,6 +11,10 @@ router.post('/email', function(req, res, next){
 	console.log('~~~~~in EMAIL ROUTE~~~~~~')
 	console.log(req.body)
 	let index = req.body.text.indexOf(' ');
+	if (index === -1) {
+		let error = new Error('Invalid syntax Usage: `/email <email> <message>')
+		next(error)
+	}
 	let email = req.body.text.slice(0, index);
 	let text = req.body.text.slice(index);
 	if (validator.validate(email)) {
