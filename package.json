@@ -1,0 +1,15 @@
+{
+  "name": "fullSlackSaver",
+  "version": "1.0.0",
+  "description": "Fellow hackathon project that saves info posted in slack",
+  "main": "index.js",
+  "author": "instructors@fullstackacademy.com",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.12.3",
+    "morgan": "^1.8.1"
+  }
+}
