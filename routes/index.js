@@ -24,14 +24,15 @@ router.post('/email', function(req, res, next){
 		// send mail with defined transport object
 		transporter.sendMail(mailOptions, function(error, info){
 				if(error){
+						res.send(`Sending Failed: ${error.message}`)
 						return console.log(error);
 				}
 				console.log('Message sent: ' + info.response);
+				res.send('Your message was sent')
 		});
 	} else {
-
+		res.send('invalid email address\nUsage: `/email <email> <message>`')
 	}
-	res.send(req.body)
 })
 
 router.post('/pin', function(req, res, next){
